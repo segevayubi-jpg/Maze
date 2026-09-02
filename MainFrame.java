@@ -68,7 +68,10 @@ public class MainFrame extends JFrame {
     
         readMazeSize();
     
-        mazeImage = apiClient.getMazeImage(mazeWidth, mazeHeight);
+        mazeImage = apiClient.getMazeImage(
+                mazeWidth,
+                mazeHeight
+        );
     
         if (mazeImage == null) {
     
@@ -80,16 +83,7 @@ public class MainFrame extends JFrame {
             return;
         }
     
-        JOptionPane.showMessageDialog(
-                this,
-                "Maze image loaded successfully!\n"
-                        + "Width: " + mazeWidth + "\n"
-                        + "Height: " + mazeHeight
-        );
-    
-        System.out.println("Maze image loaded successfully");
-        System.out.println("Image width: " + mazeImage.getWidth());
-        System.out.println("Image height: " + mazeImage.getHeight());
+        readMazePixels();
     }
     private int validateDimension(JTextField field) {
     
