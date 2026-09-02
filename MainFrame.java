@@ -23,6 +23,9 @@ public class MainFrame extends JFrame {
     private JButton getMazeButton;
 
     private ApiClient apiClient;
+    private RenderConfig renderConfig;
+    
+    private static final int CELL_SIZE = 20;
 
     public MainFrame() {
 
