@@ -39,6 +39,34 @@ public class MainFrame extends JFrame {
 
         loadConfig();
     }
+    private void decodeMaze() {
+    
+        if (mazeImage == null) {
+            return;
+        }
+    
+        int imageWidth = mazeImage.getWidth();
+        int imageHeight = mazeImage.getHeight();
+    
+        maze = new boolean[imageHeight][imageWidth];
+    
+        for (int y = 0; y < imageHeight; y++) {
+    
+            for (int x = 0; x < imageWidth; x++) {
+    
+                int rgb = mazeImage.getRGB(x, y);
+    
+                Color pixelColor = new Color(rgb);
+    
+                boolean isWhite =
+                        pixelColor.getRed() == 255
+                        && pixelColor.getGreen() == 255
+                        && pixelColor.getBlue() == 255;
+    
+                maze[y][x] = isWhite;
+            }
+        }
+    }
     private void readMazePixels() {
     
         if (mazeImage == null) {
