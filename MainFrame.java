@@ -18,20 +18,19 @@ public class MainFrame extends JFrame {
     private ApiClient apiClient;
 
     public MainFrame() {
-
+    
         setTitle("Maze Generator");
-
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-
         setSize(500, 450);
-
         setLocationRelativeTo(null);
-
+    
+        apiClient = new ApiClient();
+    
         createComponents();
-
         createLayout();
+    
+        loadConfig();
     }
-
     private void createComponents() {
 
         widthField = new JTextField("30", 10);
