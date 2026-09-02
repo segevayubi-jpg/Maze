@@ -16,8 +16,8 @@ public class ApiClient {
             "https://shaitest-production-3066.up.railway.app/fm1/get-render-config";
 
     private static final String MAZE_IMAGE_URL =
-            "https://backend-qcf9.onrender.com/fm1/get-maze-image";
-
+            "https://shaitest-production-3066.up.railway.app/fm1/get-maze-image";
+    
     public RenderConfig getRenderConfig() {
 
         HttpClient client = HttpClient.newHttpClient();
