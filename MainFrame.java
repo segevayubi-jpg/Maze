@@ -51,6 +51,17 @@ public class MainFrame extends JFrame {
             return 30;
         }
     }
+    private void readMazeSize() {
+    
+        mazeWidth = validateDimension(widthField);
+        mazeHeight = validateDimension(heightField);
+    
+        widthField.setText(String.valueOf(mazeWidth));
+        heightField.setText(String.valueOf(mazeHeight));
+    
+        System.out.println("Width: " + mazeWidth);
+        System.out.println("Height: " + mazeHeight);
+    }
     
 
     private void createComponents() {
