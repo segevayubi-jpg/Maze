@@ -11,6 +11,7 @@ public class MainFrame extends JFrame {
     private int mazeHeight = 30;
     
     private BufferedImage mazeImage;
+    private boolean[][] maze;
     
     private JLabel wallColorLabel;
     private JLabel pathColorLabel;
