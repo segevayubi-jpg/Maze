@@ -8,7 +8,9 @@ public class MainFrame extends JFrame {
     private JTextField heightField;
     private int mazeWidth = 30;
     private int mazeHeight = 30;
-
+    
+    private BufferedImage mazeImage;
+    
     private JLabel wallColorLabel;
     private JLabel pathColorLabel;
     private JLabel drawGridLabel;
