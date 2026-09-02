@@ -153,41 +153,39 @@ public class MainFrame extends JFrame {
     }
 
     private void loadConfig() {
-
-        RenderConfig config = apiClient.getRenderConfig();
-
-        if (config == null) {
-
+    
+        renderConfig = apiClient.getRenderConfig();
+    
+        if (renderConfig == null) {
+    
             JOptionPane.showMessageDialog(
                     this,
                     "Failed to load configuration"
             );
-
+    
             return;
         }
-
+    
         wallColorLabel.setText(
-                config.getWallCellColor()
+                renderConfig.getWallCellColor()
         );
-
+    
         pathColorLabel.setText(
-                config.getPathColor()
+                renderConfig.getPathColor()
         );
-
+    
         drawGridLabel.setText(
-                String.valueOf(config.isDrawGrid())
+                String.valueOf(renderConfig.isDrawGrid())
         );
-
+    
         gridColorLabel.setText(
-                config.getGridColor()
+                renderConfig.getGridColor()
         );
-
+    
         animationDelayLabel.setText(
-                config.getAnimationDelayMs() + " ms"
+                renderConfig.getAnimationDelayMs() + " ms"
         );
     }
-
-
     private void createLayout() {
 
         JPanel mainPanel = new JPanel();
