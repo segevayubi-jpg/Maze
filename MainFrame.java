@@ -15,6 +15,8 @@ public class MainFrame extends JFrame {
     private JButton refreshButton;
     private JButton getMazeButton;
 
+    private ApiClient apiClient;
+
     public MainFrame() {
 
         setTitle("Maze Generator");
