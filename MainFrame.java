@@ -45,6 +45,40 @@ public class MainFrame extends JFrame {
         refreshButton = new JButton("Refresh Config");
         getMazeButton = new JButton("GET MAZE");
     }
+    private void loadConfig() {
+    
+        RenderConfig config = apiClient.getRenderConfig();
+    
+        if (config == null) {
+    
+            JOptionPane.showMessageDialog(
+                    this,
+                    "Failed to load configuration"
+            );
+    
+            return;
+        }
+    
+        wallColorLabel.setText(
+                config.getWallCellColor()
+        );
+    
+        pathColorLabel.setText(
+                config.getPathColor()
+        );
+    
+        drawGridLabel.setText(
+                String.valueOf(config.isDrawGrid())
+        );
+    
+        gridColorLabel.setText(
+                config.getGridColor()
+        );
+    
+        animationDelayLabel.setText(
+                config.getAnimationDelayMs() + " ms"
+        );
+    }
 
     private void createLayout() {
 
