@@ -32,18 +32,20 @@ public class MainFrame extends JFrame {
         loadConfig();
     }
     private void createComponents() {
-
+    
         widthField = new JTextField("30", 10);
         heightField = new JTextField("30", 10);
-
+    
         wallColorLabel = new JLabel("Not loaded yet");
         pathColorLabel = new JLabel("Not loaded yet");
         drawGridLabel = new JLabel("Not loaded yet");
         gridColorLabel = new JLabel("Not loaded yet");
         animationDelayLabel = new JLabel("Not loaded yet");
-
+    
         refreshButton = new JButton("Refresh Config");
         getMazeButton = new JButton("GET MAZE");
+    
+        refreshButton.addActionListener(e -> loadConfig());
     }
     private void loadConfig() {
     
