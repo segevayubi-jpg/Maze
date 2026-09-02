@@ -34,7 +34,24 @@ public class MainFrame extends JFrame {
 
         loadConfig();
     }
-
+    private int validateDimension(JTextField field) {
+    
+        try {
+    
+            int value = Integer.parseInt(field.getText());
+    
+            if (value < 5 || value > 100) {
+                return 30;
+            }
+    
+            return value;
+    
+        } catch (NumberFormatException e) {
+    
+            return 30;
+        }
+    }
+    
 
     private void createComponents() {
 
