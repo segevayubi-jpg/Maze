@@ -37,6 +37,33 @@ public class MainFrame extends JFrame {
 
         loadConfig();
     }
+    private void handleGetMaze() {
+    
+        readMazeSize();
+    
+        mazeImage = apiClient.getMazeImage(mazeWidth, mazeHeight);
+    
+        if (mazeImage == null) {
+    
+            JOptionPane.showMessageDialog(
+                    this,
+                    "Failed to load maze image"
+            );
+    
+            return;
+        }
+    
+        JOptionPane.showMessageDialog(
+                this,
+                "Maze image loaded successfully!\n"
+                        + "Width: " + mazeWidth + "\n"
+                        + "Height: " + mazeHeight
+        );
+    
+        System.out.println("Maze image loaded successfully");
+        System.out.println("Image width: " + mazeImage.getWidth());
+        System.out.println("Image height: " + mazeImage.getHeight());
+    }
     private int validateDimension(JTextField field) {
     
         try {
