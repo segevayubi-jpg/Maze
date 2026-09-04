@@ -179,14 +179,17 @@ public class MainFrame extends JFrame {
 
     private void createListeners() {
     
-        refreshButton.addActionListener(e -> {
-            System.out.println("Refresh button clicked");
-            loadConfig();
-        });
+        refreshButton.addActionListener(e ->
+                loadConfig()
+        );
     
-        getMazeButton.addActionListener(e -> {
-            handleGetMaze();
-        });
+        getMazeButton.addActionListener(e ->
+                handleGetMaze()
+        );
+    
+        checkSolutionButton.addActionListener(e ->
+                checkSolution()
+        );
     }
 
     private void loadConfig() {
