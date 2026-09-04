@@ -2,6 +2,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.awt.Color;
+import java.awt.Point;
 
 public class MainFrame extends JFrame {
 
