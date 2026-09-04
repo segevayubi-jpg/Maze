@@ -43,6 +43,41 @@ public class MainFrame extends JFrame {
 
         loadConfig();
     }
+    private void showMaze() {
+    
+        MazePanel mazePanel =
+                new MazePanel(
+                        maze,
+                        renderConfig,
+                        CELL_SIZE
+                );
+    
+        JScrollPane scrollPane =
+                new JScrollPane(mazePanel);
+    
+        JPanel mazeView =
+                new JPanel(new BorderLayout());
+    
+        mazeView.add(
+                scrollPane,
+                BorderLayout.CENTER
+        );
+    
+        mazeView.add(
+                checkSolutionButton,
+                BorderLayout.SOUTH
+        );
+    
+        checkSolutionButton.setEnabled(true);
+    
+        setContentPane(mazeView);
+    
+        revalidate();
+        repaint();
+    
+        setSize(800, 700);
+        setLocationRelativeTo(null);
+    }
     private void decodeMaze() {
     
         if (mazeImage == null) {
