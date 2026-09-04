@@ -46,6 +46,25 @@ public class MainFrame extends JFrame {
 
         loadConfig();
     }
+    private void checkSolution() {
+    
+        solutionPath = MazeSolver.findPath(maze);
+    
+        if (solutionPath.isEmpty()) {
+    
+            JOptionPane.showMessageDialog(
+                    this,
+                    "No solution found"
+            );
+    
+            return;
+        }
+    
+        JOptionPane.showMessageDialog(
+                this,
+                "Solution found!"
+        );
+    }
     private void showMaze() {
     
         MazePanel mazePanel =
