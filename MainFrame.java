@@ -22,6 +22,8 @@ public class MainFrame extends JFrame {
     private JButton refreshButton;
     private JButton getMazeButton;
     private JButton checkSolutionButton;
+
+    private java.util.List<Point> solutionPath;
     
     private ApiClient apiClient;
     private RenderConfig renderConfig;
