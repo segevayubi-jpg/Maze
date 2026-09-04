@@ -110,7 +110,6 @@ public class MainFrame extends JFrame {
     private void handleGetMaze() {
     
         readMazeSize();
-    
         mazeImage = apiClient.getMazeImage(
                 mazeWidth,
                 mazeHeight
@@ -122,13 +121,10 @@ public class MainFrame extends JFrame {
                     this,
                     "Failed to load maze image"
             );
-    
             return;
         }
-    
         decodeMaze();
         showMaze();
-        System.out.println("Maze decoded successfully");
     }
     private int validateDimension(JTextField field) {
     
