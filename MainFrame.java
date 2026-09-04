@@ -127,7 +127,7 @@ public class MainFrame extends JFrame {
         }
     
         decodeMaze();
-    
+        showMaze();
         System.out.println("Maze decoded successfully");
     }
     private int validateDimension(JTextField field) {
