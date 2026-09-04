@@ -138,6 +138,8 @@ public class MainFrame extends JFrame {
 
         refreshButton = new JButton("Refresh Config");
         getMazeButton = new JButton("GET MAZE");
+        checkSolutionButton = new JButton("Check Solution");
+        checkSolutionButton.setEnabled(false);
     }
 
 
