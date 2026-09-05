@@ -26,6 +26,16 @@ public class MazePanel extends JPanel {
                 new Dimension(width, height)
         );
     }
+    public void showNextPathCell() {
+    
+        if (solutionPath != null &&
+                visiblePathCells < solutionPath.size()) {
+    
+            visiblePathCells++;
+    
+            repaint();
+        }
+    }
     public void setSolutionPath(List<Point> solutionPath) {
     
         this.solutionPath = solutionPath;
