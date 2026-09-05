@@ -31,6 +31,8 @@ public class MainFrame extends JFrame {
     
     private static final int CELL_SIZE = 20;
 
+    private MazePanel mazePanel;
+
     public MainFrame() {
 
         setTitle("Maze Generator");
