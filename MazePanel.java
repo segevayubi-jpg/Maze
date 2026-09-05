@@ -1,11 +1,15 @@
 import javax.swing.*;
 import java.awt.*;
+import java.util.List;
 
 public class MazePanel extends JPanel {
 
     private boolean[][] maze;
     private RenderConfig renderConfig;
     private int cellSize;
+
+    private List<Point> solutionPath;
+    private int visiblePathCells;
 
     public MazePanel(boolean[][] maze,
                      RenderConfig renderConfig,
