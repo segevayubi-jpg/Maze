@@ -50,6 +50,50 @@ public class MazePanel extends JPanel {
     
         repaint();
     }
+    private void drawSolution(Graphics g) {
+    
+        if (solutionPath == null) {
+            return;
+        }
+    
+        Color pathColor =
+                Color.decode(
+                        renderConfig.getPathColor()
+                );
+    
+        g.setColor(pathColor);
+    
+        for (int i = 0; i < visiblePathCells; i++) {
+    
+            Point point = solutionPath.get(i);
+    
+            g.fillRect(
+                    point.x * cellSize,
+                    point.y * cellSize,
+                    cellSize,
+                    cellSize
+            );
+    
+            if (renderConfig.isDrawGrid()) {
+    
+                Color gridColor =
+                        Color.decode(
+                                renderConfig.getGridColor()
+                        );
+    
+                g.setColor(gridColor);
+    
+                g.drawRect(
+                        point.x * cellSize,
+                        point.y * cellSize,
+                        cellSize,
+                        cellSize
+                );
+    
+                g.setColor(pathColor);
+            }
+        }
+    }
     @Override
     protected void paintComponent(Graphics g) {
 
