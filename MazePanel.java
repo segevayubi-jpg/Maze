@@ -100,5 +100,6 @@ public class MazePanel extends JPanel {
                 }
             }
         }
+        drawSolution(g);
     }
 }
